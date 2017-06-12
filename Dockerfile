@@ -1,7 +1,7 @@
 #
 # million12/nginx-php
 #
-FROM million12/nginx:latest
+FROM jbrunicardi/docker-nginx:latest
 MAINTAINER Marcin Ryzycki <marcin@m12.io>
 
 ENV \
