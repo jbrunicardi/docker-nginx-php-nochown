@@ -1,4 +1,4 @@
-FROM million12/nginx:latest
+FROM jbrunicardi/docker-nginx:latest
 MAINTAINER Marcin Ryzycki <marcin@m12.io>
 
 ADD container-files/config/install* /config/
