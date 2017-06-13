@@ -1,5 +1,5 @@
 FROM jbrunicardi/docker-nginx:latest
-MAINTAINER Marcin Ryzycki <marcin@m12.io>
+MAINTAINER Jaime Brunicardi <jbrunicardi@gmail.com>
 
 ADD container-files/config/install* /config/
 
