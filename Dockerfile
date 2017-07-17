@@ -2,7 +2,7 @@
 # million12/nginx-php
 #
 FROM jbrunicardi/docker-nginx:latest
-MAINTAINER Marcin Ryzycki <marcin@m12.io>
+MAINTAINER Jaime Brunicardi <jbrunicardi@gmail.com>
 
 ENV \
   NVM_DIR=/usr/local/nvm \
