@@ -1,6 +1,3 @@
-#
-# million12/nginx-php
-#
 FROM jbrunicardi/docker-nginx:latest
 MAINTAINER Jaime Brunicardi <jbrunicardi@gmail.com>
 
