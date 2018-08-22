@@ -6,16 +6,17 @@ MAINTAINER Jaime Brunicardi <jbrunicardi@gmail.com>
 
 ENV \
   NVM_DIR=/usr/local/nvm \
-  NODE_VERSION=5.10.1 \
+  NODE_VERSION=6.3.0 \
   STATUS_PAGE_ALLOWED_IP=127.0.0.1
 
 # Add install scripts needed by the next RUN command
 ADD container-files/config/install* /config/
+ADD container-files/etc/yum.repos.d/* /etc/yum.repos.d/
 
 RUN \
   yum update -y && \
-  `# Install yum-utils (provides yum-config-manager) + some basic web-related tools...` \
-  yum install -y yum-utils wget patch mysql tar bzip2 unzip openssh-clients rsync && \
+  `# Install some basic web-related tools...` \
+  yum install -y wget patch tar bzip2 unzip openssh-clients MariaDB-client && \
 
   `# Install PHP 7.1 from Remi YUM repository...` \
   rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
@@ -80,7 +81,7 @@ RUN \
 
   `# Install nvm and NodeJS/npm` \
   export PROFILE=/etc/profile.d/nvm.sh && touch $PROFILE && \
-  curl -sSL https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash && \
+  curl -sSL https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash && \
   source $NVM_DIR/nvm.sh && \
   nvm install $NODE_VERSION && \
   nvm alias default $NODE_VERSION && \
