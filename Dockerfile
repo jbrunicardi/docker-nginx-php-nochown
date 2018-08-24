@@ -97,7 +97,7 @@ RUN \
   phpize && ./configure && make && make install && \
   echo "extension=memcached.so" > /etc/php.d/50-memcached.ini && \
   `# Install PHP Redis ext from the source...` \
-  git clone https://github.com/phpredis/phpredis.git && cd phpredis && git checkout php7 && \
+  git clone https://github.com/phpredis/phpredis.git && cd phpredis && git checkout master && \
   phpize && ./configure && make && make install && \
   echo "extension=redis.so" > /etc/php.d/50-redis.ini && \
 
