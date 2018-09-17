@@ -45,6 +45,7 @@ RUN \
     php71-php-pecl-uploadprogress \
     php71-php-pecl-uuid \
     php71-php-pecl-zip \
+    php71-php-pecl-grpc \
 
     `# Temporary workaround: one dependant package fails to install when building image (and the yum error is: Error unpacking rpm package httpd-2.4.6-40.el7.centos.x86_64)...` \
     || true && \
