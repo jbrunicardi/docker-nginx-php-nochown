@@ -1,6 +1,3 @@
-#
-# million12/nginx-php
-#
 FROM jbrunicardi/docker-nginx:latest
 MAINTAINER Jaime Brunicardi <jbrunicardi@gmail.com>
 
@@ -48,6 +45,7 @@ RUN \
     php71-php-pecl-uploadprogress \
     php71-php-pecl-uuid \
     php71-php-pecl-zip \
+    php71-php-pecl-grpc \
 
     `# Temporary workaround: one dependant package fails to install when building image (and the yum error is: Error unpacking rpm package httpd-2.4.6-40.el7.centos.x86_64)...` \
     || true && \
@@ -100,7 +98,7 @@ RUN \
   phpize && ./configure && make && make install && \
   echo "extension=memcached.so" > /etc/php.d/50-memcached.ini && \
   `# Install PHP Redis ext from the source...` \
-  git clone https://github.com/phpredis/phpredis.git && cd phpredis && git checkout php7 && \
+  git clone https://github.com/phpredis/phpredis.git && cd phpredis && git checkout master && \
   phpize && ./configure && make && make install && \
   echo "extension=redis.so" > /etc/php.d/50-redis.ini && \
 
