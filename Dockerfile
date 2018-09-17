@@ -14,14 +14,11 @@ RUN \
   yum-config-manager -q --enable remi-php56 && \
   yum install -y php-fpm php-bcmath php-cli php-gd php-intl php-mbstring \
                   php-pecl-imagick php-mcrypt php-mysql php-opcache php-pdo php-devel && \
-  yum install -y --disablerepo=epel php-pecl-redis php-pecl-yaml && \
+  yum install -y --disablerepo=epel php-pecl-redis php-pecl-yaml php-pecl-grpc && \
 
   `# Install libs required to build some gem/npm packages (e.g. PhantomJS requires zlib-devel, libpng-devel)` \
   yum install -y ImageMagick GraphicsMagick gcc gcc-c++ libffi-devel libpng-devel zlib-devel && \
   
-  `# Install gRPC PhP Extension` \
-  pecl install grpc && \
-
   `# Install common tools needed/useful during Web App development` \
 
   `# Install Ruby 2` \
