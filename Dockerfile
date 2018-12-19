@@ -1,6 +1,8 @@
 FROM jbrunicardi/docker-nginx:latest
 MAINTAINER Jaime Brunicardi <jbrunicardi@gmail.com>
 
+RUN mkdir -p /usr/local/nvm
+
 ENV \
   NVM_DIR=/usr/local/nvm \
   NODE_VERSION=10.14.2 \
