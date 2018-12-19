@@ -3,7 +3,7 @@ MAINTAINER Jaime Brunicardi <jbrunicardi@gmail.com>
 
 ENV \
   NVM_DIR=/usr/local/nvm \
-  NODE_VERSION=6.3.0 \
+  NODE_VERSION=10.14.2 \
   STATUS_PAGE_ALLOWED_IP=127.0.0.1
 
 # Add install scripts needed by the next RUN command
@@ -79,7 +79,7 @@ RUN \
 
   `# Install nvm and NodeJS/npm` \
   export PROFILE=/etc/profile.d/nvm.sh && touch $PROFILE && \
-  curl -sSL https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash && \
+  curl -sSL https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash && \
   source $NVM_DIR/nvm.sh && \
   nvm install $NODE_VERSION && \
   nvm alias default $NODE_VERSION && \
@@ -94,7 +94,7 @@ RUN \
   `# Install Memcached, Redis PECL extensions from the source. Versions available in yum repo have dependency on igbinary which causes PHP seg faults in some PHP apps (e.g. Flow/Neos)...` \
   `# Install PHP Memcached ext from the source...` \
   yum install -y libmemcached-devel && \
-  git clone https://github.com/php-memcached-dev/php-memcached.git && cd php-memcached && git checkout php7 && \
+  git clone https://github.com/php-memcached-dev/php-memcached.git && cd php-memcached && git checkout master && \
   phpize && ./configure && make && make install && \
   echo "extension=memcached.so" > /etc/php.d/50-memcached.ini && \
   `# Install PHP Redis ext from the source...` \
