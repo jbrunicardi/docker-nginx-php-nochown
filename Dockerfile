@@ -71,7 +71,7 @@ RUN \
   `# Install Ruby 2` \
   yum install -y ruby ruby-devel && \
   echo 'gem: --no-document' > /etc/gemrc && \
-  gem update --system && \
+  gem update --system  '2.0.0-p648' && \
   gem install bundler && \
 
   `# Install/compile other software (Git, NodeJS)` \
