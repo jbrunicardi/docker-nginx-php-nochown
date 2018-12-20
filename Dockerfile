@@ -1,12 +1,12 @@
 FROM jbrunicardi/docker-nginx:latest
 MAINTAINER Jaime Brunicardi <jbrunicardi@gmail.com>
 
-RUN mkdir -p /usr/local/nvm
-
 ENV \
   NVM_DIR=/usr/local/nvm \
   NODE_VERSION=10.14.2 \
   STATUS_PAGE_ALLOWED_IP=127.0.0.1
+
+RUN mkdir -p $NVM_DIR
 
 # Add install scripts needed by the next RUN command
 ADD container-files/config/install* /config/
