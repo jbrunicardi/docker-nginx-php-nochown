@@ -40,6 +40,7 @@ RUN \
     php${PHP_VERSION}-php-pear \
     php${PHP_VERSION}-php-process \
     php${PHP_VERSION}-php-pspell \
+    php${PHP_VERSION}-php-soap \
     php${PHP_VERSION}-php-xml \
     echo "install the following PECL packages:" && \
     php${PHP_VERSION}-php-pecl-imagick \
