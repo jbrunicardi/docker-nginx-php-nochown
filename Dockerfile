@@ -75,7 +75,7 @@ RUN \
   yum install -y ruby ruby-devel && \
   echo 'gem: --no-document' > /etc/gemrc && \
   gem update --system  '2.7.8' && \
-  gem install bundler && \
+  gem install bundler -v '1.16.6' && \
 
   `# Install/compile other software (Git, NodeJS)` \
   source /config/install.sh && \
