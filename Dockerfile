@@ -1,4 +1,5 @@
-FROM million12/nginx:latest
+FROM jbrunicardi/docker-nginx:latest
+MAINTAINER Jaime Brunicardi <jbrunicardi@gmail.com>
 
 ENV \
   NVM_DIR=/usr/local/nvm \
