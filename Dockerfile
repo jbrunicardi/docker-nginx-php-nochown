@@ -40,6 +40,7 @@ RUN \
     php72-php-process \
     php72-php-pspell \
     php72-php-xml \
+	php72-php-soap \
 
     `# Also install the following PECL packages:` \
     php72-php-pecl-imagick \
