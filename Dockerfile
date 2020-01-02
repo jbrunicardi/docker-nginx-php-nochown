@@ -19,7 +19,7 @@ RUN \
   yum update -y && \
   echo "Install some basic web-related tools..." && \
   yum install -y wget patch tar bzip2 unzip openssh-clients MariaDB-client && \
-  echo "Install PHP 7.3 from Remi YUM repository..." && \
+  echo "Install PHP 7.4 from Remi YUM repository..." && \
   rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
   yum install -y \
     php${PHP_VERSION}-php \
@@ -42,7 +42,7 @@ RUN \
     php${PHP_VERSION}-php-pspell \
     php${PHP_VERSION}-php-soap \
     php${PHP_VERSION}-php-xml \
-    echo "install the following PECL packages:" && \
+	php${PHP_VERSION}-php-pecl-grpc \
     php${PHP_VERSION}-php-pecl-imagick \
     php${PHP_VERSION}-php-pecl-mysql \
     php${PHP_VERSION}-php-pecl-uploadprogress \
