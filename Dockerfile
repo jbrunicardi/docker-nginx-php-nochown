@@ -42,13 +42,13 @@ RUN \
     php${PHP_VERSION}-php-pspell \
     php${PHP_VERSION}-php-soap \
     php${PHP_VERSION}-php-xml \
-    echo "install the following PECL packages:" && \
+    php${PHP_VERSION}-php-pecl-grpc \
     php${PHP_VERSION}-php-pecl-imagick \
     php${PHP_VERSION}-php-pecl-mysql \
     php${PHP_VERSION}-php-pecl-uploadprogress \
     php${PHP_VERSION}-php-pecl-uuid \
     php${PHP_VERSION}-php-pecl-zip \
-    || true && \
+      || true && \
   echo "Set PATH so it includes newest PHP and its aliases..." && \
   ln -sfF /opt/remi/php${PHP_VERSION}/enable /etc/profile.d/php${PHP_VERSION}-paths.sh && \
   echo "The above will set PATH when container starts... but not when php is used on container build time." && \
