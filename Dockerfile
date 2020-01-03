@@ -42,7 +42,7 @@ RUN \
     php${PHP_VERSION}-php-pspell \
     php${PHP_VERSION}-php-soap \
     php${PHP_VERSION}-php-xml \
-	php${PHP_VERSION}-php-pecl-grpc \
+    php${PHP_VERSION}-php-pecl-grpc \
     php${PHP_VERSION}-php-pecl-imagick \
     php${PHP_VERSION}-php-pecl-mysql \
     php${PHP_VERSION}-php-pecl-uploadprogress \
